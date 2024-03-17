@@ -1,6 +1,14 @@
 ---
 title: Home
 layout: home
+title: Introduction
+
+title: Data Cleaning and Exploratory Data Analysis
+
+title: Assessment of Missingness
+layout: home
+title: Home
+layout: home
 ---
 
 # Introduction
