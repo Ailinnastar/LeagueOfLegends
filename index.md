@@ -1,6 +1,6 @@
 ---
 title: Leangue of Legends Analysis
-style: home
+layout: home
 
 ---
 
