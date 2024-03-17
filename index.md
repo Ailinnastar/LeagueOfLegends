@@ -4,9 +4,9 @@ layout: home
 
 ---
 
-<h1>🎮 Win rate analysis based on Champions</h1>
+# 🎮 Win rate analysis based on Champions
 
----
+
 
 # Introduction
 The datasets taken from all of the professional League of Legends games that have taken place in 2023, consisted with 128,064 rows and 93 columns.
