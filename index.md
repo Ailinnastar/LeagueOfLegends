@@ -8,7 +8,7 @@ layout: home
 
 
 
-# Introduction
+## Introduction
 The datasets taken from all of the professional League of Legends games that have taken place in 2023, consisted with 128,064 rows and 93 columns.
 
 This analysis will investigate about "**If the most banded champion is picked by a team will the team have higher chance to win that game**". 
@@ -33,11 +33,11 @@ Often some champions are the top choices in banding, which made me curious about
 | ban1 ... ban5| the champion banned within a match|
 
 
-# Data Cleaning and Exploratory Data Analysis
-# Assessment of Missingness
-# Hypothesis Testing
-# Framing a Prediction Problem
-# Baseline Model
-# Final Model
-# Fairness Analysis
+## Data Cleaning and Exploratory Data Analysis
+## Assessment of Missingness
+## Hypothesis Testing
+## Framing a Prediction Problem
+## Baseline Model
+## Final Model
+## Fairness Analysis
 
