@@ -31,8 +31,8 @@ Often some champions are the top choices in banding, which made me curious about
 
 
 ## Data Cleaning and Exploratory Data Analysis
-<iframe src="diagram/sbs_mbcpicked.html" width=550 height=450 frameBorder=50></iframe>
-<iframe src="diagram/heat_map.html" width=550 height=450 frameBorder=50></iframe>
+<iframe src="diagram/sbs_mbcpicked.html" width=600 height=450 frameBorder=50></iframe>
+<iframe src="diagram/heat_map.html" width=600 height=450 frameBorder=50></iframe>
 ## Assessment of Missingness
 ## Hypothesis Testing
 ## Framing a Prediction Problem
