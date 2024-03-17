@@ -1,7 +1,9 @@
 ---
+layout: default
 title: Leangue of Legends Analysis 🧐
-layout: home
-
+nav_order: 1
+description: "Introduction"
+permalink: /
 ---
 
 # 🎮 Win rate analysis based on Champions
