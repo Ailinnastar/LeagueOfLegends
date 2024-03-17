@@ -3,7 +3,7 @@ title: Leangue of Legends Analysis
 
 ---
 
-<h1>🎮 Winr rate analysis based on Champions</h1>
+<h1>🎮 Win rate analysis based on Champions</h1>
 
 ---
 
