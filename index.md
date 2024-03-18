@@ -24,7 +24,7 @@ Terminologies and defenition from League of legend:
 | Buff | Boosting the performace from a certain champion from each patch |
 | Ban | Champions can not be used in the game |
 | Pick | Champions seleceted to be played in the game |
-| MPC | The most banned champion |
+| MBC | The most banned champion |
 
 I will be using columns below pre deifined from the data set League of Legends 2023 frequently:
 
@@ -55,9 +55,4 @@ Also using columns defined by myself and frequently used through out the analysi
 
 
 
-## Hypothesis Testing
-## Framing a Prediction Problem
-## Baseline Model
-## Final Model
-## Fairness Analysis
 
