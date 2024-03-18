@@ -16,3 +16,6 @@ nav_order: 3
 
 **Test statistics**: Total variances difference.
 
+
+<iframe src="graph/tvd15.html" width=800 height=600 frameBorder=0></iframe>
+
