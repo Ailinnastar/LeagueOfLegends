@@ -1,3 +1,7 @@
+---
+title: Data Cleaning and Exploratory Data Analysis 🧹
+layout: default
+---
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Univariate Analysis
