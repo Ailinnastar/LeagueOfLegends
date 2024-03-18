@@ -14,6 +14,7 @@ Utilise **permutation test** to see if the difference in accuracy is significant
 - Test statistic: Difference in accuracy (Blue side minus Red side).
 - Significance level: 0.01.
   
-![confusion_matrix](https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/2f57370f-b3e8-46b2-8aff-ec0f19a5743e)
+<img width="548" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/9830697f-806b-4d17-8003-3fa39a240762">
+
 
 <iframe src="diagram/fairdiff.html" width=630 height=430 frameBorder=50></iframe> 
