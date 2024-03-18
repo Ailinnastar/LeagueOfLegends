@@ -1,8 +1,8 @@
 ---
-layout: defult
 title: Hypothesis Testing
-nav_order: 4
+layout: default
 description: "Hypothesis Testing"
+nav_order: 4
 ---
 
 # Hypothesis Testing
