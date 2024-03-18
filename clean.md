@@ -1,10 +1,11 @@
 ---
 title: Data Cleaning and Exploratory Data Analysis 🧹
 layout: default
+description: "Data Cleaning and Exploratory Data Analysis"
 nav_order: 2
 ---
 
-## Data Cleaning and Exploratory Data Analysis
+
 ### Univariate Analysis
 <iframe src="diagram/horizontal_barc_frequency.html" width=800 height=600 frameBorder=0></iframe>
 
