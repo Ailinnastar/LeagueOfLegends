@@ -1,11 +1,11 @@
 ---
-title: Hypothesis Testing
+title: Hypothesis Testing 
 layout: default
 description: "Hypothesis Testing"
 nav_order: 4
 ---
 
-# Hypothesis Testing
+## Hypothesis Testing
 
 **Null hypothesis**: If the highest band champion is picked the chances of win will still stays the same.
 
