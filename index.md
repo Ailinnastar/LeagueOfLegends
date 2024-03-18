@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Leangue of Legends Analysis 🧐
 nav_order: 1
 description: "Introduction"
@@ -55,7 +55,6 @@ Also using columns defined by myself and frequently used through out the analysi
 
 
 
-## Assessment of Missingness
 ## Hypothesis Testing
 ## Framing a Prediction Problem
 ## Baseline Model
