@@ -12,10 +12,20 @@ permalink: /
 ## Introduction
 The datasets taken from all of the professional League of Legends games that have taken place in 2023, consisted with 128,064 rows and 93 columns.
 
-This analysis will investigate about "**If the most banded champion is picked by a team will the team have higher chance to win that game**". 
+From viewers perspctive we often find some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions.Therefore this analysis will investigate about "**If the most banded champion is picked by a team will the team have higher chance to win that game**". 
 
-Often some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions.
-<iframe src="diagram/horizontal_barc_frequency.html" width=800 height=600 frameBorder=0></iframe>
+Terminologies and defenition from League of legend:
+| Term | Definition |
+|:-----------:|:-----------:|
+| Champion | The character can be selected in the game|
+| Soul | Buff granted after defeat dragons |
+| Nerf | Weakening the performace from a certain champion from each patch  |
+| Buff | Boosting the performace from a certain champion from each patch |
+| Ban | Champions can not be used in the game |
+| Pick | Champions seleceted to be played in the game |
+| MPC | The most picked champion |
+
+I will be using columns below pre deifined from the data set League of Legends 2023 frequently:
 
 | Column Name | Description |
 |:-----------:|:-----------:|
@@ -30,6 +40,17 @@ Often some champions are the top choices in banding, which made me curious about
 | assists | number of times a player assisted in killing an opponent |
 | pick1 ... pick5 | the champion name that a player plays as |
 | ban1 ... ban5| the champion banned within a match|
+
+Also using columns defined by myself and frequently used through out the analysis:
+| Column Name | Description |
+|:-----------:|:-----------:|
+| most_banned_champion_picked | unique id from each match |
+| average_result | the league or tournament name |
+
+
+
+<iframe src="diagram/horizontal_barc_frequency.html" width=800 height=600 frameBorder=0></iframe>
+
 
 
 ## Data Cleaning and Exploratory Data Analysis
