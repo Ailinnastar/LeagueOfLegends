@@ -17,8 +17,8 @@ nav_order: 3
 **Test statistics**: Total variances difference.
 
 
-<iframe src="diagram/tvd15.html" width=630 height=450 frameBorder=50></iframe>
-<iframe src="diagram/observe15.html" width=630 height=450 frameBorder=50></iframe>
+<iframe src="diagram/tvd15.html" width=630 height=430 frameBorder=50></iframe>
+<iframe src="diagram/observe15.html" width=630 height=430 frameBorder=50></iframe>
 
 p-value is **0.518**.
 
@@ -34,8 +34,8 @@ Let `'souls'` be all the souls apears in the data.
 **Alternative hypothesis**: The missingess of `'souls'` depends on `'patch'`. 
 
 **Test statistics**: Total variances difference.
-<iframe src="diagram/tvdsoul.html" width=630 height=450 frameBorder=50></iframe>
-<iframe src="diagram/observesoul.html" width=630 height=450 frameBorder=50></iframe>
+<iframe src="diagram/tvdsoul.html" width=630 height=430 frameBorder=50></iframe>
+<iframe src="diagram/observesoul.html" width=630 height=430 frameBorder=50></iframe>
 
 The p-value is **0.0**.
 
