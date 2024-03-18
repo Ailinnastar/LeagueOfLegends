@@ -25,7 +25,7 @@ p-value is **0.518**.
 Therefore, we accept the null hypothesis, which concludes the missingness in all of the 15mins columns are **not dependent** on `'gamelength'`.
 
 ----
-#### Check if souls **`'infernals',	'mountains', 'clouds', 'ocean', 'chemtechs', 'hextechs'`** is **dependent** on **`'patch'`**.
+#### Check if souls **`'infernals'`**, **`'mountains'`**, **`'clouds'`**, **`'ocean'`**, **`'chemtechs'`**, **`'hextechs'`**  **dependens** on **`'patch'`**.
 
 Let `'souls'` be all the souls apears in the data.
 
