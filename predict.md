@@ -7,6 +7,4 @@ has_children: true
 ---
 
 ## Framing a Prediction Problem
-## Baseline Model
-## Final Model
-## Fairness Analysis
+
