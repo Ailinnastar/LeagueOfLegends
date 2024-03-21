@@ -62,6 +62,7 @@ Hyperparameters chosed to be tuned:
 | `'max_features'` |Finds an optimal number that allows the trees to be diverse enough to capture various aspects of the data, while this will have risk in captureing noise, therefore needs to be tuned.|'auto'|
 
 Hyperparameters pre defined by me:
+
 | Hyperparameters name |Reason of chose|number_choice|
 |:-----------:|:-----------:|:-----------:|
 |`'random_state'`|It ensures reproducibility which made the result more consisnent, ruther optimising prediction.|6 - my lucky number!|
