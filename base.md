@@ -64,7 +64,7 @@ Hyperparameters chosed to be tuned:
 Hyperparameters pre defined by me:
 | Hyperparameters name |Reason of chose|number_choice|
 |:-----------:|:-----------:|:-----------:|
-|`'random_state'`|It ensures reproducibility which made the result more consisnent, ruther optimising results.|6|
+|`'random_state'`|It ensures reproducibility which made the result more consisnent, ruther optimising prediction.|6 - my lucky number!|
 
 
 
