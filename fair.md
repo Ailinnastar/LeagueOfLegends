@@ -28,10 +28,15 @@ Utilise **permutation test** to see if the difference in accuracy is significant
 - 
 - **Significance level**: 0.01.
   
-<img width="529" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/37acf8ba-6e8c-489f-9335-a5b8e0b9b579">
+<img width="545" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/0eb9cd01-8aed-4f30-a520-e9847b21f17c">
 
 
-P - value is 0.341
+| Side | Accuracy |
+|:-----------:|:-----------:|
+| Blue | 0.98|
+| Red | 0.99 |
+
+P - value is 0.072
 
 Therefore reject the accept hypothesis, that is the classifier's accuracy is the same for Blue side and Red side, and any differences are due to chance. While impliying there is not a statistically significant difference between the accuracy of `Blue` and `Red` side from our model.
 
