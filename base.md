@@ -48,7 +48,7 @@ If we look in to the measure of the importance or contribution of each feature u
 | 'dpm', 'wpm', 'wcpm', 'vspm','cspm'| Quantative|  PolynomialFeatures(degree=2, include_bias=False) |These evaluate the vision control and team strategy and decisions, how effecting utilising the charaterisctics of champion, and its position, which will be consist as a huge part to have success.   | 
 | 'dragons', 'barons', 'towers'| Quantative| Pass in as it is |These measures reflect that teams stretigic decisgion, team strength, and team resources, which ofcourse contribute significantly to the result.|
 
-### **Optimising thorugh Hyperparameters**
+### **Optimising through Hyperparameters**
 Run `GridSearchCV` with 5 folds on the model to find the hyper-parameter optimises the score for unseen datas.
 
 Hyperparameters chosed to be tuned:
