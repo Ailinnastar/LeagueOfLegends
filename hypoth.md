@@ -21,7 +21,7 @@ As we want to test whether the MBC picked will raise the win rate or not, we wil
 <iframe src="diagram/hypothe-ditribution.html" width=630 height=430 frameBorder=50></iframe>
 **Result**
 
-p-value: 0.0
+**p-value**: 0.0
 
 We **reject the null hypothesis** that the highest band champion is picked the chances of win will still stays the same.
 Therefore, picking the highest banned champion does influence the win rate.
