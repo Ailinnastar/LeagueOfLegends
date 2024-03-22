@@ -6,7 +6,7 @@ nav_order: 5
 has_children: true
 ---
 
-## Framing a Prediction Problem
+# Framing a Prediction Problem
 
 **Prediction Problem:** Predict the match result for all the team from all professional League of Legends (LoL)
 
