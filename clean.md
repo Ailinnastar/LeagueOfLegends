@@ -35,9 +35,8 @@ Therefore, we first limit the data set to only contain `position` that is `team`
 Through exploring we found there are missing valules in Ban column for some games. I searched up matchs for LFL and found the ban was actually emoty on perpose, there fore there was no need for me to replace or implemenet with some values.
 
 Actual two match data from LFL league in 2023:
-![image.png](attachment:image.png)
-![image-3.png](attachment:image-3.png)
-![image-2.png](attachment:image-2.png)
+<img width="1431" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/0ed289bc-61c1-4269-ab67-d87fd2469f02">
+
 
 two match data from LFL league in 2023 provided:
 
