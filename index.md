@@ -12,7 +12,7 @@ permalink: /
 ## Introduction
 The datasets taken from all of the professional League of Legends games that have taken place in 2023, consisted with 128,064 rows and 93 columns.
 
-From viewers perspctive we often find some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions.Therefore this analysis will investigate
+From viewers perspctive we often find some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions. Therefore this analysis will investigate
 > "**If the most banded champion is picked by a team will the team have higher chance to win that game**". 
 
 Terminologies and defenition from League of legend:
