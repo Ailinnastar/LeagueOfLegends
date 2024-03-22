@@ -49,7 +49,7 @@ two match data from LFL league in 2023 provided:
 However, to find out the most banded champion from each patch version, we first have to combine band columns in to a column `'ban_list'` as a list so that we do not have to be bothered by the missingness, while we also accumulate and find out which chmapion is banned the most in the whole data set thorough Univariate Analysis.
 
 ### Univariate Analysis
-<iframe src="diagram/horizontal_barc_frequency.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="diagram/datac-horizontal.html" width=800 height=600 frameBorder=0></iframe>
 
 From the above exploration and the  horizontal bar chart, `Maokai` was the most banned champion in the whole data set. 
 
@@ -117,7 +117,7 @@ Now let's look in to the most banned champion in each patch, to see whether `Mao
 | 13.21|                      'Orianna' |
 | 13.24   |                     'Ashe' |
 
-<iframe src="diagram/datac-barc.html" width=630 height=450 frameBorder=50></iframe>
+<iframe src="diagram/datac-barc.html" width=800 height=450 frameBorder=50></iframe>
 
 
 From the result and another **Univariate Analysis** above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
@@ -137,8 +137,8 @@ Now we can create a column which indicates is the most banned champion specified
 
 Using the column `most_banned_champion_picked` we use **Bivariate Analysis**, side by side box plot and heat map to explore how the the average results in each patch is distributed, while also observe is there a significance difference in mean between MBC picked or not. 
 
-<iframe src="diagram/sbs_mbcpicked.html" width=630 height=450 frameBorder=50></iframe>
-<iframe src="diagram/heat_map.html" width=630 height=450 frameBorder=50></iframe>
+<iframe src="diagram/datac-sbsb.html" width=630 height=450 frameBorder=50></iframe>
+<iframe src="diagram/datac-hm.html" width=630 height=450 frameBorder=50></iframe>
 
 From these two plots we can observe the mean and the spreadbess,the overall color in both groups are different and we can see MBC picked have better result overall, which gives me a insight of there is some influence made by picking MBC on the winning rate.
 
