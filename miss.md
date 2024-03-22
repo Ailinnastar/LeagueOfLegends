@@ -4,6 +4,7 @@ layout: default
 description: "Assessment of Missingness"
 nav_order: 3
 ---
+# Assessment of Missingness
 
 ## NMAR Analysis
 As we mensioned previously that there are some ban column were are missing, in my opinion this is classified as `not missing at random (NMAR)`.
