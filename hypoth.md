@@ -5,7 +5,7 @@ description: "Hypothesis Testing"
 nav_order: 4
 ---
 
-## Hypothesis Testing
+# Hypothesis Testing
 
 As we want to test whether the MBC picked will raise the win rate or not, we will perform Permutation test, shuffling `most_banned_champion_picked` and do Difference in Mean since it is comparing two groups.
 
