@@ -1,7 +1,7 @@
 ---
 title: Prediction Problem
 layout: default
-description: "Prediction Model"
+description: "Prediction Problem"
 nav_order: 5
 has_children: true
 ---
