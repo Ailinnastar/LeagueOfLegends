@@ -118,8 +118,12 @@ Now let's look in to the most banned champion in each patch, to see whether `Mao
 | 13.21|                      'Orianna' |
 | 13.24   |                     'Ashe' |
 
+<iframe src="diagram/datac-barc.html" width=630 height=450 frameBorder=50></iframe>
 
-From the result and  Bivariate Analysis above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
+
+From the result and another **Univariate Analysis** above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
+
+##  Creating column `most_banned_champion`
 
 Now we can create a column which indicates is the most banned champion specified in the column `most_banned_champion`, is in those picked champions, and assigned to a new column `most_banned_champion_picked`, consisted with `True` or `False`.
 
@@ -131,8 +135,33 @@ Now we can create a column which indicates is the most banned champion specified
 | ViV Esport    | ['Heimerdinger', 'Wukong', 'Akali', 'Syndra', 'Sylas'] | Maokai                 | False                         |
 | Team du Sud   | ['Zac', 'Sylas', 'Sejuani', 'Jarvan IV', 'Ornn']       | Maokai                 | False                         |
 
-<iframe src="diagram/datac-barc.html" width=630 height=450 frameBorder=50></iframe>
 
-Using the column `most_banned_champion_picked` we create side by side box plot and heat map to explore how the the average results in each patch is distributed, while also observe is there a significance difference in mean between MBC picked or not. 
+Using the column `most_banned_champion_picked` we use **Bivariate Analysis**, side by side box plot and heat map to explore how the the average results in each patch is distributed, while also observe is there a significance difference in mean between MBC picked or not. 
+
 <iframe src="diagram/sbs_mbcpicked.html" width=630 height=450 frameBorder=50></iframe>
 <iframe src="diagram/heat_map.html" width=630 height=450 frameBorder=50></iframe>
+
+From these two plots we can observe the mean and the spreadbess,the overall color in both groups are different and we can see MBC picked have better result overall, which gives me a insight of there is some influence made by picking MBC on the winning rate.
+
+
+### Interesting Aggregates
+
+Since we are interested in the most banned champion, we use pivot table to see which league is the hardest and which is the easiest to get to select the most banned champion.
+|       AL |     CBLOL |    CBLOLA |   CDF |      DCup |       DDH |       EBL |        EL |       EM |       EPL |     ESLOL |       GL |      GLL |        HM |        IC |       LCK |     LCKC |       LCO |      LCS |      LEC |      LFL |     LFL2 |      LHE |       LJL |   LJLA |       LLA |      LMF |      LPL |   LPLOL |      LRN |      LRS |    LVP SL |      MSI |      NACL |   NEXO |      NLC |       PCS |      PGN |       PRM |   SL (LATAM) |       TCL |       UL |      VCS |       VL |     WLDs |
+|---------:|----------:|----------:|------:|----------:|----------:|----------:|----------:|---------:|----------:|----------:|---------:|---------:|----------:|----------:|----------:|---------:|----------:|---------:|---------:|---------:|---------:|---------:|----------:|-------:|----------:|---------:|---------:|--------:|---------:|---------:|----------:|---------:|----------:|-------:|---------:|----------:|---------:|----------:|-------------:|----------:|---------:|---------:|---------:|---------:|
+| 0.838028 | 0.917355  | 0.907258  |  0.98 | 0.95122   | 0.918605  | 0.921429  | 0.926829  | 0.867159 | 0.916667  | 0.919162  | 0.884058 | 0.856707 | 0.926573  | 0.917808  | 0.902664  | 0.868545 | 0.946429  | 0.893939 | 0.872822 | 0.890496 | 0.876623 | 0.881818 | 0.939922  |    0.7 | 0.914062  | 0.843023 | 0.872848 |     0.9 | 0.892241 | 0.878151 | 0.90081   | 0.881579 | 0.905051  | 0.8125 | 0.897436 | 0.909556  | 0.886792 | 0.902893  |    0.903409  | 0.911111  | 0.867347 | 0.898333 | 0.877358 | 0.832117 |
+| 0.161972 | 0.0826446 | 0.0927419 |  0.02 | 0.0487805 | 0.0813953 | 0.0785714 | 0.0731707 | 0.132841 | 0.0833333 | 0.0808383 | 0.115942 | 0.143293 | 0.0734266 | 0.0821918 | 0.0973361 | 0.131455 | 0.0535714 | 0.106061 | 0.127178 | 0.109504 | 0.123377 | 0.118182 | 0.0600775 |    0.3 | 0.0859375 | 0.156977 | 0.127152 |     0.1 | 0.107759 | 0.121849 | 0.0991903 | 0.118421 | 0.0949495 | 0.1875 | 0.102564 | 0.0904437 | 0.113208 | 0.0971074 |    0.0965909 | 0.0888889 | 0.132653 | 0.101667 | 0.122642 | 0.167883 |
+
+From this pivoit table what we found the most difficult league to pick the most banned champion is `CDF` with **2.0%**, and the easiest league to pick the most banned champion is `LJLA` with **30.0%**
+
+While if we see how frequent is `Maokai` which is the MBC fro the whole data set with the bias of patch.
+|       AL |    CBLOL |   CBLOLA |   CDF |   DCup |     DDH |      EBL |       EL |       EM |      EPL |    ESLOL |       GL |      GLL |       HM |       IC |      LCK |     LCKC |      LCO |      LCS |      LEC |      LFL |     LFL2 |      LHE |     LJL |   LJLA |      LLA |     LMF |      LPL |    LPLOL |      LRN |      LRS |   LVP SL |      MSI |     NACL |     NEXO |      NLC |      PCS |      PGN |      PRM |   SL (LATAM) |      TCL |       UL |   VCS |       VL |    WLDs |
+|---------:|---------:|---------:|------:|-------:|--------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|--------:|-------:|---------:|--------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|-------------:|---------:|---------:|------:|---------:|--------:|
+| 0.785211 | 0.780992 | 0.832661 |  0.72 |      1 | 0.77907 | 0.714286 | 0.756098 | 0.806273 | 0.732143 | 0.820359 | 0.804348 | 0.804878 | 0.744755 | 0.828767 | 0.818648 | 0.737089 | 0.839286 | 0.876894 | 0.763066 | 0.739669 | 0.790043 | 0.790909 | 0.77907 |      1 | 0.838542 | 0.77907 | 0.829801 | 0.778125 | 0.793103 | 0.777311 | 0.813765 | 0.763158 | 0.809091 | 0.770833 | 0.737179 | 0.767918 | 0.839623 | 0.791322 |     0.818182 | 0.766667 | 0.765306 |  0.88 | 0.839623 | 0.70438 |
+| 0.214789 | 0.219008 | 0.167339 |  0.28 |      0 | 0.22093 | 0.285714 | 0.243902 | 0.193727 | 0.267857 | 0.179641 | 0.195652 | 0.195122 | 0.255245 | 0.171233 | 0.181352 | 0.262911 | 0.160714 | 0.123106 | 0.236934 | 0.260331 | 0.209957 | 0.209091 | 0.22093 |      0 | 0.161458 | 0.22093 | 0.170199 | 0.221875 | 0.206897 | 0.222689 | 0.186235 | 0.236842 | 0.190909 | 0.229167 | 0.262821 | 0.232082 | 0.160377 | 0.208678 |     0.181818 | 0.233333 | 0.234694 |  0.12 | 0.160377 | 0.29562 |
+
+From here what we found The least banned Maokai league is `DCup` with **0.0%** and the most banned Maokai league is `WLDs` with **29.56204379562044%**.
+
+From this we can see that Maokai is not the most 'most' banned champion acorss the leaugue and the most banned champion are highlly depend on other column or other factors.
+
+
