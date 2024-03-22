@@ -79,15 +79,18 @@ Hyperparameters pre defined by me:
 From the result above I think the model is performing very well with high accuracy and low RMSE compare to the baseline model we had preciously, 25% improvement in testing accuracy.
 Which I think this model is doing really good prediction with data given in the **time of prediction**.
 
-However if we use this model for people who do bets, might 
+If we look in to the confusion matrix and caculate the precision and recall:
 
 <img width="538" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/2e13fddc-deea-48ce-ad0a-7037dea9994d">
+
+
 
 |  | Score |
 |:-----------:|:-----------:|
 |Precision| 0.9830999517141478|
 |Recall|0.960377358490566|
 
+we can see precison and recall are both high, which means if teams wants to use this model to discuss about the gaming strategy, this model will not overconfidence(FP) them but also underestimate their ability (FN).
 
 
 
