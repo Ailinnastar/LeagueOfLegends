@@ -30,7 +30,7 @@ To make missingness in the ban columns be `MAR` from `NMAR`, collect listen to t
 <iframe src="diagram/depend-tvd.html" width=630 height=430 frameBorder=50></iframe>
 <iframe src="diagram/depend-obs15.html" width=630 height=430 frameBorder=50></iframe>
 
-p-value is **0.518**.
+The p-value is **0.518**.
 
 Therefore, we accept the null hypothesis, which concludes the missingness in all of the 15mins columns are **not dependent** on `'gamelength'`.
 
