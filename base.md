@@ -76,7 +76,20 @@ Hyperparameters pre defined by me:
 |Score (accuracy)| 0.9873817034700315|0.9861684057267653|
 |Root mean squared error|0.11233119126034609|0.11760779852218411|
 
+From the result above I think the model is performing very well with high accuracy and low RMSE compare to the baseline model we had preciously, 25% improvement in testing accuracy.
+Which I think this model is doing really good prediction with data given in the **time of prediction**.
+
+However if we use this model for people who do bets, might 
+
 <img width="538" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/2e13fddc-deea-48ce-ad0a-7037dea9994d">
+
+|  | Score |
+|:-----------:|:-----------:|
+|Precision| 0.9830999517141478|
+|Recall|0.960377358490566|
+
+
+
 
 
 
