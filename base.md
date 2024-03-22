@@ -6,7 +6,7 @@ description: "Trial of models"
 nav_order: 5
 ---
 
-## Baseline Model
+# Baseline Model
 
 **Model Description:**
 **RandomForestClassifier** is the classifier chosen for this prodiction model prediting `result`(1 - win or 0 -lose) with **5 Norminal features.**
@@ -35,7 +35,7 @@ While **bad** in the same time, as we are predicting it is 1, 0 for result and t
 
 If we look in to the measure of the importance or contribution of each feature used in the prediction, `sum_firsts` contributes dominantly with 99.6%, which is the column added up by `firstXX`, while suprisingly the one hot encoded`most_banned_champion_picked` did not contribute a lot to the prediction as I expacted.
 
-## Final Model
+# Final Model
 **Model Description:**
 **RandomForestClassifier** is the classifier chosen for this prodiction model prediting `result`(1 - win or 0 -lose) with **16 features.**
 
