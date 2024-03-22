@@ -117,7 +117,7 @@ Now let's look in to the most banned champion in each patch, to see whether `Mao
 | 13.21|                      'Orianna' |
 | 13.24   |                     'Ashe' |
 
-<iframe src="diagram/datac-barc.html" width=800 height=450 frameBorder=50></iframe>
+<iframe src="diagram/datac-barc.html" width=950 height=450 frameBorder=50></iframe>
 
 
 From the result and another **Univariate Analysis** above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
@@ -146,6 +146,7 @@ From these two plots we can observe the mean and the spreadbess,the overall colo
 ### Interesting Aggregates
 
 Since we are interested in the most banned champion, we use pivot table to see which league is the hardest and which is the easiest to get to select the most banned champion.
+
 |       AL |     CBLOL |    CBLOLA |   CDF |      DCup |       DDH |       EBL |        EL |       EM |       EPL |     ESLOL |       GL |      GLL |        HM |        IC |       LCK |     LCKC |       LCO |      LCS |      LEC |      LFL |     LFL2 |      LHE |       LJL |   LJLA |       LLA |      LMF |      LPL |   LPLOL |      LRN |      LRS |    LVP SL |      MSI |      NACL |   NEXO |      NLC |       PCS |      PGN |       PRM |   SL (LATAM) |       TCL |       UL |      VCS |       VL |     WLDs |
 |---------:|----------:|----------:|------:|----------:|----------:|----------:|----------:|---------:|----------:|----------:|---------:|---------:|----------:|----------:|----------:|---------:|----------:|---------:|---------:|---------:|---------:|---------:|----------:|-------:|----------:|---------:|---------:|--------:|---------:|---------:|----------:|---------:|----------:|-------:|---------:|----------:|---------:|----------:|-------------:|----------:|---------:|---------:|---------:|---------:|
 | 0.838028 | 0.917355  | 0.907258  |  0.98 | 0.95122   | 0.918605  | 0.921429  | 0.926829  | 0.867159 | 0.916667  | 0.919162  | 0.884058 | 0.856707 | 0.926573  | 0.917808  | 0.902664  | 0.868545 | 0.946429  | 0.893939 | 0.872822 | 0.890496 | 0.876623 | 0.881818 | 0.939922  |    0.7 | 0.914062  | 0.843023 | 0.872848 |     0.9 | 0.892241 | 0.878151 | 0.90081   | 0.881579 | 0.905051  | 0.8125 | 0.897436 | 0.909556  | 0.886792 | 0.902893  |    0.903409  | 0.911111  | 0.867347 | 0.898333 | 0.877358 | 0.832117 |
@@ -154,6 +155,7 @@ Since we are interested in the most banned champion, we use pivot table to see w
 From this pivoit table what we found the most difficult league to pick the most banned champion is `CDF` with **2.0%**, and the easiest league to pick the most banned champion is `LJLA` with **30.0%**
 
 While if we see how frequent is `Maokai` which is the MBC fro the whole data set with the bias of patch.
+
 |       AL |    CBLOL |   CBLOLA |   CDF |   DCup |     DDH |      EBL |       EL |       EM |      EPL |    ESLOL |       GL |      GLL |       HM |       IC |      LCK |     LCKC |      LCO |      LCS |      LEC |      LFL |     LFL2 |      LHE |     LJL |   LJLA |      LLA |     LMF |      LPL |    LPLOL |      LRN |      LRS |   LVP SL |      MSI |     NACL |     NEXO |      NLC |      PCS |      PGN |      PRM |   SL (LATAM) |      TCL |       UL |   VCS |       VL |    WLDs |
 |---------:|---------:|---------:|------:|-------:|--------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|--------:|-------:|---------:|--------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|-------------:|---------:|---------:|------:|---------:|--------:|
 | 0.785211 | 0.780992 | 0.832661 |  0.72 |      1 | 0.77907 | 0.714286 | 0.756098 | 0.806273 | 0.732143 | 0.820359 | 0.804348 | 0.804878 | 0.744755 | 0.828767 | 0.818648 | 0.737089 | 0.839286 | 0.876894 | 0.763066 | 0.739669 | 0.790043 | 0.790909 | 0.77907 |      1 | 0.838542 | 0.77907 | 0.829801 | 0.778125 | 0.793103 | 0.777311 | 0.813765 | 0.763158 | 0.809091 | 0.770833 | 0.737179 | 0.767918 | 0.839623 | 0.791322 |     0.818182 | 0.766667 | 0.765306 |  0.88 | 0.839623 | 0.70438 |
