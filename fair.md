@@ -6,7 +6,7 @@ description: "Fairness Analysis"
 nav_order: 5
 ---
 
-## Fairness Analysis
+# Fairness Analysis
 
 | most_banned_champion_picked | Accuracy |
 |:-----------:|:-----------:|
