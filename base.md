@@ -87,6 +87,7 @@ If we look **into** the confusion matrix and **calculate** the precision and rec
 <div style="text-align: center; margin: 1rem 0;">
 <img width="538" alt="image" src="https://github.com/Ailinnastar/LeagueOfLegends/assets/156360722/2e13fddc-deea-48ce-ad0a-7037dea9994d">
 </div>
+
 | | Score |
 |:-----------:|:-----------:|
 |Precision| 0.9830999517141478|
