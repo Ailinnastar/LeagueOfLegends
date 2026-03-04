@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Leangue of Legends Analysis 🧐
+title: League of Legends Analysis 🧐
 nav_order: 1
 description: "Introduction"
 permalink: /
@@ -20,13 +20,13 @@ The datasets taken from all of the professional League of Legends games that hav
 | ESPORTSTMNT06_2753012 | complete           |   nan | LFL2     |   2023 | Spring  |          0 | 2023-01-10 17:07:16 |      1 |   13.01 |               4 | Blue   | bot        | Axelent      | oe:player:8204ca38dc1c42012b5d53131271eb1 | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Ezreal     | Sylas  | Caitlyn | Wukong | Akali  | Yone   |     nan |     nan |     nan |     nan |     nan |         2612 |        1 |       5 |        1 |         7 |          13 |            7 |             0 |             0 |             0 |            0 |            0 |                0 |                  0 |                  0 |     0.2986 | 0.4594 |           nan |       nan |           nan |               nan |                   nan |         nan |         nan |      nan |      nan |         nan |        nan |                      nan |      nan |          nan |           nan |       nan |           nan |          nan |              nan |          nan |        0 |            0 |          nan |      nan |          nan |             nan |                  nan |            nan |                nan |            1 |                0 |               42005 | 964.893 |     0.441215  |                398.453 |                    234.372 |            17 | 0.3905 |             6 | 0.1378 |                    5 |            47 | 1.0796 |       17332 |        11728 |     269.403  |         0.261862  |       15225 |    nan |        370 |           345 |             25 |                     nan |                       nan | 8.4992 |       3344 |     3377 |       94 |           3015 |         2948 |           75 |            329 |          429 |           19 |           0 |             0 |            0 |               0 |                 0 |                0 |       5217 |     5647 |      142 |           5017 |         5355 |          122 |            200 |          292 |           20 |           0 |             0 |            0 |               1 |                 0 |                0 |
 | ESPORTSTMNT06_2753012 | complete           |   nan | LFL2     |   2023 | Spring  |          0 | 2023-01-10 17:07:16 |      1 |   13.01 |               5 | Blue   | sup        | Wixo         | oe:player:bb97cd2e43cb0855f6485e6f9e93ea2 | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Karma      | Sylas  | Caitlyn | Wukong | Akali  | Yone   |     nan |     nan |     nan |     nan |     nan |         2612 |        1 |       0 |        2 |        10 |          13 |            7 |             0 |             0 |             0 |            0 |            0 |                0 |                  0 |                  1 |     0.2986 | 0.4594 |           nan |       nan |           nan |               nan |                   nan |         nan |         nan |      nan |      nan |         nan |        nan |                      nan |      nan |          nan |           nan |       nan |           nan |          nan |              nan |          nan |        0 |            0 |          nan |      nan |          nan |             nan |                  nan |            nan |                nan |            0 |                0 |                5668 | 130.199 |     0.0595359 |                360.276 |                    284.15  |            52 | 1.1945 |             8 | 0.1838 |                   15 |           106 | 2.4349 |        8816 |         3212 |      73.7825 |         0.0717161 |        8125 |    nan |         21 |            17 |              4 |                     nan |                       nan | 0.4824 |       1953 |     2367 |        1 |           2032 |         2825 |            3 |            -79 |         -458 |           -2 |           0 |             0 |            0 |               0 |                 0 |                0 |       2827 |     3218 |        3 |           3043 |         3797 |            3 |           -216 |         -579 |            0 |           0 |             0 |            1 |               0 |                 1 |                0 |
 
-From viewers perspctive we often find some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions. Therefore this analysis will investigate
-> "**If the most banded champion is picked by a team will the team have higher chance to win that game**". 
+From viewers perspective we often find some champions are the top choices in banding, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions. Therefore this analysis will investigate
+> "**If the most banned champion is picked by a team will the team have higher chance to win that game**". 
 
 
-While for the convinience and efficiency of the analysis, this Analysis will only use the rows for the `team`, which are 16,484 rows and 130 columns.
+While for the convenience and efficiency of the analysis, this Analysis will only use the rows for the `team`, which are 16,484 rows and 130 columns.
 
-Terminologies and defenition from League of legend:
+Terminologies and definition from League of legend:
 
 | Term | Definition |
 |:-----------:|:-----------:|
@@ -44,11 +44,11 @@ I will be using columns below pre deifined from the data set League of Legends 2
 |:-----------:|:-----------:|
 | gameid | Unique id from each match |
 | league | The tournament name |
-| patch | The game patch or virsion used in the match |
+| patch | The game patch or version used in the match |
 | url | The live stream url for the match |
 | result | 1 if team win 0 if loss |
 | position | The player's role in game |
-| kills | Number of opponents a player has deafeat |
+| kills | Number of opponents a player has defeat |
 | deaths | Number of times a player has been deafeted |
 | assists | Number of times a player assisted in killing an opponent |
 | pick1 ... pick5 | The champion name that a player plays as |
