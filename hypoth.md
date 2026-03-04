@@ -17,7 +17,9 @@ As we want to test whether the MBC picked will raise the win rate or not, we wil
 
 **Method:** **Permutation** test with 10,000 simulations with significance level 0.05 (significance level commonly used).
 
-<iframe src="diagram/hypothe-ditribution.html" width="800" height="500" frameBorder="0"></iframe>
+
+<iframe src="diagram/hypothe-ditribution.html" width=630 height=430 frameBorder=50></iframe>
+
 
 **Result**
 

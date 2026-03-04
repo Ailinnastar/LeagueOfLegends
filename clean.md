@@ -48,7 +48,7 @@ two match data from LFL league in 2023 provided:
 
 ### Univariate Analysis
 
-<iframe src="diagram/datac-horizontal.html" width="800" height="600" frameBorder="0"></iframe>
+<iframe src="diagram/datac-horizontal.html" width=800 height=600 frameBorder=0></iframe>
 
 From the above exploration and the horizontal bar chart, `Maokai` was the most banned champion in the whole data set.
 
