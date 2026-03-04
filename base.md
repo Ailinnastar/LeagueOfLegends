@@ -9,12 +9,12 @@ nav_order: 5
 # Baseline Model
 
 **Model Description:**
-**RandomForestClassifier** is the classifier chosen for this prodiction model prediting `result`(1 - win or 0 -lose) with **5 Norminal features.**
+**RandomForestClassifier** is the classifier chosen for this prediction model prediting `result`(1 - win or 0 -lose) with **5 Nominal features.**
 
 | Column name(s) | Data type |Encoding|Reason of chose|
 |:-----------:|:-----------:|:-----------:|:-----------:|
-| 'firstblood', 'firstbaron', 'firstdragon', 'firsttower' | Norminal|FunctionTransformer(add) - add all together| Early achivements are really curcial as it often demonstrates the differences in performance and harmony in the team, provides momentum and psychological advantages, which will directly affect the result.|
-| 'most_banned_champion_picked'| Norminal|OneHotEncoder() - One Hot Encoded| From the hypothesis tessting, we concluded whether or not picking MBC will influence the win rate.| 
+| 'firstblood', 'firstbaron', 'firstdragon', 'firsttower' | Nominal|FunctionTransformer(add) - add all together| Early achievements are really crucial as it often demonstrates the differences in performance and harmony in the team, provides momentum and psychological advantages, which will directly affect the result.|
+| 'most_banned_champion_picked'| Nominal|OneHotEncoder() - One Hot Encoded| From the hypothesis tessting, we concluded whether or not picking MBC will influence the win rate.| 
 
 
 **Result** 
@@ -24,7 +24,7 @@ nav_order: 5
 |Score (accuracy)| 0.7364717301625819|0.7362290706139286|
 |Root mean squared error|0.5133500461063758|0.5135863407315963|
 
-Through only using these features, I think the model performs **well** with accuracy **73.97% in  train**, **72.65% in test** concidering with the fact that games results often comes with luck.
+Through only using these features, I think the model performs **well** with accuracy **73.97% in  train**, **72.65% in test** considering with the fact that games results often comes with luck.
 
 While **bad** in the same time, as we are predicting it is 1, 0 for result and the root mean squre error is .513 whcih means my predictions and the actual values is a bit over halfway between a perfect model and the worst-case scenario, which says it is not a ideal model.
 
@@ -37,16 +37,16 @@ If we look in to the measure of the importance or contribution of each feature u
 
 # Final Model
 **Model Description:**
-**RandomForestClassifier** is the classifier chosen for this prodiction model prediting `result`(1 - win or 0 -lose) with **16 features.**
+**RandomForestClassifier** is the classifier chosen for this prediction model prediting `result`(1 - win or 0 -lose) with **16 features.**
 
 | Column name(s) | Data type |Encoding|Reason of chose|
 |:-----------:|:-----------:|:-----------:|:-----------:|
-| 'firstblood', 'firstbaron', 'firstdragon', 'firsttower' | Norminal|FunctionTransformer(add) - add all together| Early achivements are really curcial as it often demonstrates the differences in performance and harmony in the team, provides momentum and psychological advantages, which will directly affect the result.|
-| 'xpat15', 'goldat15'| Quantative| QuantileTransformer()| Since 0-30 mins are growingtime, 15 min is a curcial time stamp where teams have half finished building up the base, demonstrates how well the team is developoing agisnt the other, which will influence the result as well. As vales have wide range we used quualtile to split in to quarter. | 
-| 'team kpm'| Quantative| Binarizer(threshold=all_pick_team['team kpm'].mean()),PolynomialFeatures(degree=2, include_bias=False)| This indicates how teams are efficient in kill the oponents, which evalueates to better players' technique and team stretegy which highly leads to sucess .| 
+| 'firstblood', 'firstbaron', 'firstdragon', 'firsttower' | Nominal|FunctionTransformer(add) - add all together| Early achievements are really crucial as it often demonstrates the differences in performance and harmony in the team, provides momentum and psychological advantages, which will directly affect the result.|
+| 'xpat15', 'goldat15'| Quantative| QuantileTransformer()| Since 0-30 mins are growingtime, 15 min is a crucial time stamp where teams have half finished building up the base, demonstrates how well the team is developoing agisnt the other, which will influence the result as well. As vales have wide range we used quantile to split in to quarter. | 
+| 'team kpm'| Quantative| Binarizer(threshold=all_pick_team['team kpm'].mean()),PolynomialFeatures(degree=2, include_bias=False)| This indicates how teams are efficient in kill the oponents, which evalueates to better players' technique and team strategy which highly leads to sucess .| 
 | 'earned gpm'| Quantative| PolynomialFeatures(degree=2, include_bias=False)| Depict how teams are efficiently growing economicly, so tha they can grow and purchase item faster to be more advantaged.| 
 | 'dpm', 'wpm', 'wcpm', 'vspm','cspm'| Quantative|  PolynomialFeatures(degree=2, include_bias=False) |These evaluate the vision control and team strategy and decisions, how effecting utilising the charaterisctics of champion, and its position, which will be consist as a huge part to have success.   | 
-| 'dragons', 'barons', 'towers'| Quantative| Pass in as it is |These measures reflect that teams stretigic decisgion, team strength, and team resources, which ofcourse contribute significantly to the result.|
+| 'dragons', 'barons', 'towers'| Quantative| Pass in as it is |These measures reflect that teams stratigic decision, team strength, and team resources, which ofcourse contribute significantly to the result.|
 
 ### **Optimising through Hyperparameters**
 Run `GridSearchCV` with 5 folds on the model to find the hyper-parameter optimises the score for unseen datas.
