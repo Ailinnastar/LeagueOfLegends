@@ -27,9 +27,11 @@ To make missingness in the ban columns be `MAR` from `NMAR`, **one would need to
 **Alternative hypothesis**: The missingness of all information of game after started 15 mins(`'XXX15'`) depends on `'gamelength'`.
 
 **Test statistics**: Total **variation** difference.
+<div style="text-align: center; margin: 1rem 0;">
+<iframe src="diagram/depend-tvd.html" width=630 height=400 frameBorder=50></iframe>
+<iframe src="diagram/depend-obs15.html" width=630 height=400 frameBorder=50></iframe>
+</div>
 
-<iframe src="diagram/depend-tvd.html" width=630 height=430 frameBorder=50></iframe>
-<iframe src="diagram/depend-obs15.html" width=630 height=430 frameBorder=50></iframe>
 
 The p-value is **0.518**.
 
@@ -46,8 +48,11 @@ Let `'souls'` be all the souls **that** appear in the data.
 
 **Test statistics**: Total **variation** difference.
 
-<iframe src="diagram/depend-tvdsoul.html" width=630 height=430 frameBorder=50></iframe>
-<iframe src="diagram/depend-obssoul.html" width=630 height=430 frameBorder=50></iframe>
+<div style="text-align: center; margin: 1rem 0;">
+<iframe src="diagram/depend-tvdsoul.html" width=630 height=400 frameBorder=50></iframe>
+<iframe src="diagram/depend-obssoul.html" width=630 height=400 frameBorder=50></iframe>
+</div>
+
 
 The p-value is **0.0**.
 
