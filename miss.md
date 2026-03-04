@@ -28,6 +28,7 @@ To make missingness in the ban columns be `MAR` from `NMAR`, **one would need to
 
 **Test statistics**: Total **variation** difference.
 
+<iframe src="diagram/depend-tvd.html" width="800" height="500" frameBorder="0"></iframe>
 
 The p-value is **0.518**.
 
@@ -43,6 +44,8 @@ Let `'souls'` be all the souls **that** appear in the data.
 **Alternative hypothesis**: The missingness of `'souls'` depends on `'patch'`.
 
 **Test statistics**: Total **variation** difference.
+
+<iframe src="diagram/depend-tvdsoul.html" width="800" height="500" frameBorder="0"></iframe>
 
 The p-value is **0.0**.
 

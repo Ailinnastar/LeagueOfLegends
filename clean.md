@@ -46,12 +46,15 @@ two match data from LFL league in 2023 provided:
 | LFL      | IZI Dream  | Spring  | Red    |        0 |   13.01 | Lucian | Zeri         | Maokai |    nan |    nan |
 
 
+### Univariate Analysis
+
+<iframe src="diagram/datac-horizontal.html" width="800" height="600" frameBorder="0"></iframe>
+
+From the above exploration and the horizontal bar chart, `Maokai` was the most banned champion in the whole data set.
+
 However, to find out the most banned champion from each patch version, we first have to combine band columns in to a column `'ban_list'` as a list so that we do not have to be bothered by the missingness, while we also accumulate and find out which champion is banned the most in the whole data set thorough Univariate Analysis.
 
-### Univariate Analysis
-<iframe src="diagram/datac-horizontal.html" width=800 height=600 frameBorder=0></iframe>
-
-From the above exploration and the  horizontal bar chart, `Maokai` was the most banned champion in the whole data set. 
+From the above exploration and the horizontal bar chart, `Maokai` was the most banned champion in the whole data set.
 
 However, in LOL each patch give `Buff` and `Nerf` on some champions, therefore to investigate the appropriateness that `Maokai` is the one actually banned most without the influence of patch, we look in to the distribution of the patch. 
 

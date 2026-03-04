@@ -13,6 +13,7 @@ nav_order: 5
 | False | 0.97|
 | True | 0.96 |
 
+<iframe src="diagram/diffference_acc.html" width="800" height="500" frameBorder="0"></iframe>
 
 **Above** shows how well the model performed **for** MBC**-picked** side **vs** MBC**-not-picked** side; we can see there is a small difference in accuracy between the two groups. Therefore we use a **permutation test** to see if the difference in accuracy is significant.
 
