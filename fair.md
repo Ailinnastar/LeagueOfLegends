@@ -17,6 +17,8 @@ nav_order: 5
 <div style="text-align: center; margin: 1rem 0;">
 <iframe src="diagram/diffference_acc.html" width=530 height=530 frameBorder=50></iframe> 
 </div>
+
+
 **Above** shows how well the model performed **for** MBC**-picked** side **vs** MBC**-not-picked** side; we can see there is a small difference in accuracy between the two groups. Therefore we use a **permutation test** to see if the difference in accuracy is significant.
 
 **Null Hypothesis**: The classifier's accuracy is the same for both MBC picked side and MBC not picked, and any differences are due to chance.
