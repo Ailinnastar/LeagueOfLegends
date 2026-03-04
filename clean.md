@@ -120,7 +120,7 @@ Now let's look in to the most banned champion in each patch, to see whether `Mao
 | 13.24 |               'Ashe' |
 
 <div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/datac-barc.html" width=630 height=350 frameBorder=0 style="display: inline-block;"></iframe>
+<iframe src="diagram/datac-barc.html" width=800 height=500 frameBorder=0 style="display: inline-block;"></iframe>
 </div>
 
 From the result and another **Univariate Analysis** above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
@@ -140,10 +140,10 @@ Now we can create a column which indicates is the most banned champion specified
 Using the column `most_banned_champion_picked` we use **Bivariate Analysis**, side by side box plot and heat map to explore how the the average results in each patch is distributed, while also observe is there a significance difference in mean between MBC picked or not.
 
 <div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/datac-sbsb.html" width=630 height=340 frameBorder=0 style="display: inline-block;"></iframe>
+<iframe src="diagram/datac-sbsb.html" width=630 height=340 frameBorder=0 ></iframe>
 </div>
 <div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/datac-hm.html" width=630 height=340 frameBorder=0 style="display: inline-block;"></iframe>
+<iframe src="diagram/datac-hm.html" width=630 height=340 frameBorder=0 ></iframe>
 </div>
 
 From these two plots we can observe the mean and the spread,the overall color in both groups are different and we can see MBC picked have better result overall, which gives me a insight of there is some influence made by picking MBC on the winning rate.
