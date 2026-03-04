@@ -48,7 +48,7 @@ two match data from LFL league in 2023 provided:
 
 ### Univariate Analysis
 
-<iframe src="diagram/datac-horizontal.html" width=500 height=800 frameBorder=0 style="display:block;"></iframe>
+<iframe src="diagram/datac-horizontal.html" width=630 height=800 frameBorder=0 style="display:block;"></iframe>
 
 From the above exploration and the horizontal bar chart, `Maokai` was the most banned champion in the whole data set.
 
@@ -120,7 +120,7 @@ Now let's look in to the most banned champion in each patch, to see whether `Mao
 | 13.21|                      'Orianna' |
 | 13.24   |                     'Ashe' |
 
-<iframe src="diagram/datac-barc.html" width=1000 height=300 frameBorder=0 style="display:block;"></iframe>
+<iframe src="diagram/datac-barc.html" width=630 height=300 frameBorder=0 style="display:block;"></iframe>
 
 
 From the result and another **Univariate Analysis** above, `Maokai` is the most banned champion because `Maokai` was the champion banned most from the most dominant patch `13.01`. Therefore, we should not set the most banned champion as `Maokai`, instead we set the most banned champion according to patch, specified in the column `most_banned_champion`.
