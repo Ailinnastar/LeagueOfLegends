@@ -1,9 +1,18 @@
-title: League Of Legend Analysis 
-description: Is the most banned champion is the strongest?
+title: League Of Legend Analysis
+description: If the most-banned champion is picked, does that team win more often?
 
 theme: just-the-docs
 color_scheme: dark
 
+url: https://ailinnastar.github.io
+baseurl: /LeagueOfLegends
 
-url: https://just-the-docs.github.io
-
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.ipynb"
+  - "*.csv"
+  - "*.py"
+  - ROADMAP.md
+  - dsc80_utils.py
+  - README.md

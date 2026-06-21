@@ -1,59 +1,77 @@
 ---
 title: Assessment of Missingness
 layout: default
-description: "Assessment of Missingness"
+description: "Assessment of missingness"
 nav_order: 3
 ---
-# Assessment of Missingness
 
-## NMAR Analysis
-As we mentioned previously that there are some ban columns **that have** missing values, in my opinion this is classified as `not missing at random (NMAR)`.
+<link rel="stylesheet" href="{{ '/assets/css/lol-dashboard.css' | relative_url }}">
+<script defer src="{{ '/assets/js/lol-charts.js' | relative_url }}"></script>
 
-In professional LOL league, they often do not ban all five of the champions, this sometimes implies that the team have more confidence in winning against the other, or there is no **necessity of** banning other champions, or even to **increase** entertainment value for streamers.
+<div class="lol-dashboard lol-page">
+  <section class="lol-page-hero">
+    <p class="lol-kicker">Missingness</p>
+    <h1>Which blanks matter for the analysis?</h1>
+    <p class="lol-lede">
+      Missing values appear in ban slots, 15-minute game-state columns, and elemental soul columns. The project handles each type according to how it arises in professional matches.
+    </p>
+  </section>
 
-There are many reasons which can not be predicted through any column which demonstrates that the missing values in `ban1 to 5` are `NMAR`.
+  <section class="lol-grid lol-grid-two">
+    <article class="lol-panel">
+      <p class="lol-section-label">Ban slots</p>
+      <h2>Empty bans are part of draft behavior</h2>
+      <p>
+        Some professional teams do not use all five bans. These blank ban slots are not imputed because they can reflect strategy, confidence, tournament rules, or match context.
+      </p>
+      <div class="lol-callout">
+        The ban-list feature uses the non-missing bans only, preserving empty bans as empty instead of inventing champion names.
+      </div>
+    </article>
 
-To make missingness in the ban columns be `MAR` from `NMAR`, **one would need to** collect **or** listen to the conversation between players, planned ban champions before match and all the players' mind **activities**, and make a column that specify**s** the reason **for** not banning if the team do not ban all 5.
+    <article class="lol-panel lol-panel-tight">
+      <p class="lol-section-label">Dependency tests</p>
+      <div class="lol-data-table">
+        <div class="lol-data-row">
+          <strong>15-minute columns</strong>
+          <span>Permutation test p-value: 0.518. Missingness was not treated as dependent on game length.</span>
+        </div>
+        <div class="lol-data-row">
+          <strong>Soul columns</strong>
+          <span>Permutation test p-value: 0.000. Missingness is structurally tied to patch availability.</span>
+        </div>
+      </div>
+    </article>
+  </section>
 
-**In practice**, we do not impute the ban columns; we only use non-missing bans when building `ban_list` and defining the most banned champion per patch.
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Missing values</p>
+        <h2>Missingness by feature group</h2>
+      </div>
+      <p>
+        Switch between the feature groups to see where missingness appears in the team-level dataset.
+      </p>
+    </div>
+    <div class="lol-chart-card" data-lol-chart="missingness"></div>
+  </section>
 
-## Missingness Dependency ##
-
-### Check if all information of game after started 15 mins **`'goldat15'`** ,**` 'xpat15'`** ,**`'csat15'`** ,**`'opp_goldat15'`** , **`'opp_xpat15'`** ,**`'opp_csat15'`** ,**`'golddiffat15'`** ,**`'xpdiffat15'`** ,**` 'csdiffat15'`**,**`'killsat15'`** ,**`'assistsat15'`**,**`'deathsat15'`**, **` 'opp_killsat15'`**, **`'opp_assistsat15'`**,**`'opp_deathsat15'`** are **dependent** on **`'gamelength'`**.
-
-
-**Null hypothesis**: The missingness of all information of game after started 15 mins(`'XXX15'`) does not depend on `'gamelength'`.
-
-**Alternative hypothesis**: The missingness of all information of game after started 15 mins(`'XXX15'`) depends on `'gamelength'`.
-
-**Test statistics**: Total **variation** difference.
-<div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/depend-tvd.html" width=630 height=400 frameBorder=50></iframe>
-<iframe src="diagram/depend-obs15.html" width=630 height=400 frameBorder=50></iframe>
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Decision</p>
+        <h2>How missing values are handled</h2>
+      </div>
+      <p>
+        The model uses rows with the required prediction features available. Ban slots stay blank when teams did not use all bans.
+      </p>
+    </div>
+    <ol class="lol-step-list">
+      <li>Keep empty ban slots as missing and build ban lists from available values.</li>
+      <li>Use patch-specific most-banned champions after resolving missing patch labels from match context.</li>
+      <li>Drop rows without required 15-minute model features for the interactive prediction model.</li>
+      <li>Treat soul-column missingness as structural because those columns depend on patch-era data availability.</li>
+    </ol>
+  </section>
 </div>
-
-
-The p-value is **0.518**.
-
-Therefore, we accept the null hypothesis, which concludes the missingness in all of the 15mins columns are **not dependent** on `'gamelength'`.
-
-----
-### Check if souls **`'infernals'`**, **`'mountains'`**, **`'clouds'`**, **`'ocean'`**, **`'chemtechs'`**, **`'hextechs'`** **depend** on **`'patch'`**.
-
-Let `'souls'` be all the souls **that** appear in the data.
-
-**Null hypothesis**: The missingness of `'souls'` does not depend on `'patch'`.
-
-**Alternative hypothesis**: The missingness of `'souls'` depends on `'patch'`.
-
-**Test statistics**: Total **variation** difference.
-
-<div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/depend-tvdsoul.html" width=630 height=400 frameBorder=50></iframe>
-<iframe src="diagram/depend-obssoul.html" width=630 height=400 frameBorder=50></iframe>
-</div>
-
-
-The p-value is **0.0**.
-
-Therefore, **reject** the null hypothesis; the missingness in **`'souls'`** **depends** on **`'patch'`. (Soul columns exist only in certain patches, so missingness is structurally tied to patch.)

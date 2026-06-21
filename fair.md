@@ -2,33 +2,93 @@
 layout: default
 title: Fairness Analysis
 parent: Prediction Problem
-description: "Fairness Analysis"
-nav_order: 5
+description: "Fairness analysis"
+nav_order: 2
 ---
 
-# Fairness Analysis
+<link rel="stylesheet" href="{{ '/assets/css/lol-dashboard.css' | relative_url }}">
+<script defer src="{{ '/assets/js/lol-charts.js' | relative_url }}"></script>
 
-| most_banned_champion_picked | Accuracy |
-|:-----------:|:-----------:|
-| False | 0.97|
-| True | 0.96 |
+<div class="lol-dashboard lol-page">
+  <section class="lol-page-hero">
+    <p class="lol-kicker">Fairness analysis</p>
+    <h1>Checking performance across draft-pressure groups</h1>
+    <p class="lol-lede">
+      The fairness check compares model accuracy for teams that picked the patch-specific most-banned champion and teams that did not.
+    </p>
+  </section>
 
+  <section class="lol-metrics" aria-label="Fairness summary">
+    <article class="lol-metric">
+      <span class="lol-metric-value">97.0%</span>
+      <span class="lol-metric-label">accuracy without MBC pick</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">96.0%</span>
+      <span class="lol-metric-label">accuracy with MBC pick</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">-1.32 pp</span>
+      <span class="lol-metric-label">observed difference</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">0.072</span>
+      <span class="lol-metric-label">permutation p-value</span>
+    </article>
+  </section>
 
-<div style="text-align:center; margin:1rem 0;"><iframe src="diagram/diffference_acc.html" width="100%" style="max-width:560px; height:400px; border:0;" title="Empirical distribution of difference in accuracy"></iframe></div> 
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Group comparison</p>
+        <h2>Accuracy by MBC-pick group</h2>
+      </div>
+      <p>
+        The observed accuracy difference is small, and the permutation test does not show a statistically significant drop for the MBC-picked group at the 0.01 level.
+      </p>
+    </div>
+    <div class="lol-chart-card" data-lol-chart="fairness"></div>
+  </section>
 
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Performance matrix</p>
+        <h2>Correct and incorrect predictions</h2>
+      </div>
+      <p>
+        This matrix shows how held-out predictions split across true losses, false wins, false losses, and true wins.
+      </p>
+    </div>
+    <div class="lol-chart-card" data-lol-chart="matrix"></div>
+  </section>
 
-**Above** shows how well the model performed **for** MBC**-picked** side **vs** MBC**-not-picked** side; we can see there is a small difference in accuracy between the two groups. Therefore we use a **permutation test** to see if the difference in accuracy is significant.
+  <section class="lol-grid lol-grid-two">
+    <article class="lol-panel">
+      <p class="lol-section-label">Test setup</p>
+      <h2>Permutation test on accuracy difference</h2>
+      <div class="lol-data-table">
+        <div class="lol-data-row">
+          <strong>Null hypothesis</strong>
+          <span>Classifier accuracy is the same for both groups.</span>
+        </div>
+        <div class="lol-data-row">
+          <strong>Alternative hypothesis</strong>
+          <span>Classifier accuracy is lower when the most-banned champion was picked.</span>
+        </div>
+        <div class="lol-data-row">
+          <strong>Test statistic</strong>
+          <span>Accuracy for MBC-picked teams minus accuracy for non-MBC-picked teams.</span>
+        </div>
+      </div>
+    </article>
 
-**Null Hypothesis**: The classifier's accuracy is the same for both MBC picked side and MBC not picked, and any differences are due to chance.
-
-**Alternative Hypothesis**: The classifier's accuracy is lower for MBC picked.
-
-**Test statistic**: Difference in accuracy (MBC picked **minus** MBC not picked).
-
-**Significance level**: 0.01.
-
-**Observed difference**: -0.013223530127444705
-
-P**-**value is 0.072
-
-Therefore **accept** the null hypothesis: the classifier's accuracy is the same for both MBC picked side and MBC not picked, and any differences are due to chance. **This implies** there is not a statistically significant difference between the accuracy when MBC picked is `True` and when it is `False` for our model. So the model does not systematically perform worse for teams that picked the most-banned champion.
+    <article class="lol-panel lol-panel-tight">
+      <p class="lol-section-label">Conclusion</p>
+      <h2>No statistically significant performance gap</h2>
+      <p>
+        With p-value 0.072, the final model does not show evidence that it systematically performs worse for teams that picked the most-banned champion.
+      </p>
+    </article>
+  </section>
+</div>

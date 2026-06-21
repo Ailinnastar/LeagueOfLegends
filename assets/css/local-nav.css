@@ -1,0 +1,177 @@
+.lol-local-nav {
+  position: fixed;
+  top: 50%;
+  left: 1.25rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 16.75rem;
+  max-height: calc(100vh - 2rem);
+  padding: 1.1rem;
+  border: 1px solid rgba(200, 155, 60, 0.28);
+  border-radius: 12px;
+  background: rgba(8, 13, 12, 0.97);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+  transform: translateY(-50%);
+  overflow: auto;
+}
+
+.lol-local-nav-brand {
+  display: grid;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(200, 155, 60, 0.2);
+}
+
+.lol-local-nav-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(200, 155, 60, 0.35);
+  border-radius: 9px;
+  background: rgba(200, 155, 60, 0.1);
+  color: #f0d58c;
+}
+
+.lol-local-nav-brand-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.lol-local-nav-brand strong {
+  display: block;
+  color: #f8f1dc;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.lol-local-nav-brand span {
+  display: block;
+  margin-top: 0.15rem;
+  color: #c8c0ac;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.lol-local-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lol-local-nav-links a {
+  display: grid;
+  grid-template-columns: 1.35rem minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.72rem 0.8rem;
+  border: 1px solid rgba(200, 155, 60, 0.18);
+  border-radius: 8px;
+  color: #f8f1dc;
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease, color 160ms ease;
+}
+
+.lol-local-nav-links a svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #c89b3c;
+  flex-shrink: 0;
+}
+
+.lol-local-nav-links a:hover {
+  border-color: rgba(240, 213, 140, 0.7);
+  background: rgba(200, 155, 60, 0.13);
+  color: #f0d58c;
+  transform: translateX(0.18rem);
+}
+
+.lol-local-nav-links a:hover svg {
+  color: #f0d58c;
+}
+
+body.has-local-nav {
+  margin: 0;
+  padding: 1.25rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: #080d0c;
+  color: #eee;
+}
+
+body.has-local-nav main {
+  width: min(1320px, calc(100vw - 24.5rem));
+  margin-left: 21.5rem;
+  padding-left: 2.25rem;
+}
+
+body.has-local-nav table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+body.has-local-nav th,
+body.has-local-nav td {
+  border: 1px solid #444;
+  padding: 0.4rem 0.6rem;
+}
+
+body.has-local-nav iframe,
+body.has-local-nav img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.has-local-nav code {
+  background: #333;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  body.has-local-nav {
+    padding: 0.75rem;
+  }
+
+  .lol-local-nav {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-height: none;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .lol-local-nav-links {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.15rem;
+  }
+
+  .lol-local-nav-links a {
+    min-width: max-content;
+  }
+
+  .lol-local-nav-links a:hover {
+    transform: translateY(-0.08rem);
+  }
+
+  body.has-local-nav main {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

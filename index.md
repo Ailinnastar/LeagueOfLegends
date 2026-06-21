@@ -1,65 +1,96 @@
 ---
 layout: home
-title: League of Legends Analysis 🧐
+title: League of Legends Analysis
 nav_order: 1
-description: "Introduction"
+description: "League of Legends champion ban and win-rate analysis"
 permalink: /
 ---
 
-# 🎮 Win rate analysis based on Champions
+<link rel="stylesheet" href="{{ '/assets/css/lol-dashboard.css' | relative_url }}">
 
+<div class="lol-dashboard">
+  <section class="lol-hero">
+    <p class="lol-kicker">2023 professional League of Legends data</p>
+    <h1>If the most-banned champion is picked, does that team win more often?</h1>
+    <p class="lol-lede">
+      This project follows the champion ban meta across professional matches and tests whether picking the patch-specific most-banned champion is linked to winning.
+    </p>
+    <div class="lol-actions" aria-label="Primary analysis links">
+      <a class="lol-button lol-button-primary" href="{{ '/clean.html' | relative_url }}">Explore the analysis</a>
+      <a class="lol-button" href="{{ '/interactive.html' | relative_url }}">Try the model</a>
+    </div>
+  </section>
 
-## Introduction
-The datasets taken from all of the professional League of Legends games that have taken place in 2023, consisted with 128,064 rows and 130 columns.
+  <section class="lol-metrics" aria-label="Project summary">
+    <article class="lol-metric">
+      <span class="lol-metric-value">128,064</span>
+      <span class="lol-metric-label">raw records</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">21,344</span>
+      <span class="lol-metric-label">team rows</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">22</span>
+      <span class="lol-metric-label">patches</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">+5.1 pp</span>
+      <span class="lol-metric-label">MBC win-rate lift</span>
+    </article>
+  </section>
 
-| gameid | datacompleteness | url | league | year | split | playoffs | date | game | patch | participantid | side | position | playername | playerid | teamname | teamid | champion | ban1 | ban2 | ban3 | ban4 | ban5 | pick1 | pick2 | pick3 | pick4 | pick5 | gamelength | result | kills | deaths | assists | teamkills | teamdeaths | doublekills | triplekills | quadrakills | pentakills | firstblood | firstbloodkill | firstbloodassist | firstbloodvictim | team kpm | ckpm | firstdragon | dragons | opp_dragons | elementaldrakes | opp_elementaldrakes | infernals | mountains | clouds | oceans | chemtechs | hextechs | dragons (type unknown) | elders | opp_elders | firstherald | heralds | opp_heralds | void_grubs | opp_void_grubs | firstbaron | barons | opp_barons | firsttower | towers | opp_towers | firstmidtower | firsttothreetowers | turretplates | opp_turretplates | inhibitors | opp_inhibitors | damagetochampions | dpm | damageshare | damagetakenperminute | damagemitigatedperminute | wardsplaced | wpm | wardskilled | wcpm | controlwardsbought | visionscore | vspm | totalgold | earnedgold | earned gpm | earnedgoldshare | goldspent | gspd | total cs | minionkills | monsterkills | monsterkillsownjungle | monsterkillsenemyjungle | cspm | goldat10 | xpat10 | csat10 | opp_goldat10 | opp_xpat10 | opp_csat10 | golddiffat10 | xpdiffat10 | csdiffat10 | killsat10 | assistsat10 | deathsat10 | opp_killsat10 | opp_assistsat10 | opp_deathsat10 | goldat15 | xpat15 | csat15 | opp_goldat15 | opp_xpat15 | opp_csat15 | golddiffat15 | xpdiffat15 | csdiffat15 | killsat15 | assistsat15 | deathsat15 | opp_killsat15 | opp_assistsat15 | opp_deathsat15 |
-|:----------------------|:-------------------|------:|:---------|-------:|:--------|-----------:|:--------------------|-------:|--------:|----------------:|:-------|:-----------|:-------------|:------------------------------------------|:--------------|:----------------------------------------|:-----------|:-------|:--------|:-------|:-------|:-------|--------:|--------:|--------:|--------:|--------:|-------------:|---------:|--------:|---------:|----------:|------------:|-------------:|--------------:|--------------:|--------------:|-------------:|-------------:|-----------------:|-------------------:|-------------------:|-----------:|-------:|--------------:|----------:|--------------:|------------------:|----------------------:|------------:|------------:|---------:|---------:|------------:|-----------:|-------------------------:|---------:|-------------:|--------------:|----------:|--------------:|-------------:|-----------------:|-------------:|---------:|-------------:|-------------:|---------:|-------------:|----------------:|---------------------:|---------------:|-------------------:|-------------:|-----------------:|--------------------:|--------:|--------------:|-----------------------:|---------------------------:|--------------:|-------:|--------------:|-------:|---------------------:|--------------:|-------:|------------:|-------------:|-------------:|------------------:|------------:|-------:|-----------:|--------------:|---------------:|------------------------:|--------------------------:|-------:|-----------:|---------:|---------:|---------------:|-------------:|-------------:|---------------:|-------------:|-------------:|------------:|--------------:|-------------:|----------------:|------------------:|-----------------:|-----------:|---------:|---------:|---------------:|-------------:|-------------:|---------------:|-------------:|-------------:|------------:|--------------:|-------------:|----------------:|------------------:|-----------------:|
-| ESPORTSTMNT06_2753012 | complete | nan | LFL2 | 2023 | Spring | 0 | 2023-01-10 17:07:16 | 1 | 13.01 | 1 | Blue | top | Wylenz | oe:player:60aff1184bec1d2b2efdae84f5b6e3e | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Jax | Sylas | Caitlyn | Wukong | Akali | Yone | nan | nan | nan | nan | nan | 2612 | 1 | 4 | 0 | 6 | 13 | 7 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.2986 | 0.4594 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | nan | nan | nan | nan | nan | nan | nan | 1 | 0 | 14283 | 328.093 | 0.150027 | 719.541 | 878.913 | 20 | 0.4594 | 5 | 0.1149 | 11 | 49 | 1.1256 | 18855 | 13251 | 304.387 | 0.295868 | 15955 | nan | 399 | 367 | 32 | nan | nan | 9.1654 | 3163 | 4772 | 83 | 3087 | 4814 | 81 | 76 | -42 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 5059 | 7946 | 143 | 4737 | 7683 | 131 | 322 | 263 | 12 | 0 | 0 | 0 | 0 | 0 | 0 |
-| ESPORTSTMNT06_2753012 | complete | nan | LFL2 | 2023 | Spring | 0 | 2023-01-10 17:07:16 | 1 | 13.01 | 2 | Blue | jng | Julbu | oe:player:fd78e127e45463dcfc2ea3836af0335 | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Poppy | Sylas | Caitlyn | Wukong | Akali | Yone | nan | nan | nan | nan | nan | 2612 | 1 | 2 | 2 | 4 | 13 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0.2986 | 0.4594 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | 1 | 0 | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | 6219 | 142.856 | 0.0653236 | 847.305 | 1513.97 | 18 | 0.4135 | 11 | 0.2527 | 17 | 61 | 1.4012 | 12082 | 6478 | 148.805 | 0.14464 | 11675 | nan | 159 | 23 | 136 | nan | nan | 3.6524 | 3035 | 3302 | 54 | 2948 | 3140 | 66 | 87 | 162 | -12 | 0 | 0 | 0 | 0 | 0 | 0 | 4325 | 4637 | 74 | 4682 | 5960 | 117 | -357 | -1323 | -43 | 0 | 0 | 0 | 0 | 0 | 0 |
-| ESPORTSTMNT06_2753012 | complete | nan | LFL2 | 2023 | Spring | 0 | 2023-01-10 17:07:16 | 1 | 13.01 | 3 | Blue | mid | Sintax | oe:player:baf7147fedeec5de54ca1f240952a3f | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Taliyah | Sylas | Caitlyn | Wukong | Akali | Yone | nan | nan | nan | nan | nan | 2612 | 1 | 2 | 2 | 11 | 13 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0.2986 | 0.4594 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | 27028 | 620.858 | 0.283899 | 365.352 | 323.729 | 23 | 0.5283 | 10 | 0.2297 | 7 | 49 | 1.1256 | 15722 | 10118 | 232.42 | 0.225914 | 14525 | nan | 337 | 287 | 50 | nan | nan | 7.7412 | 3117 | 4927 | 85 | 3455 | 5174 | 103 | -338 | -247 | -18 | 0 | 0 | 0 | 0 | 0 | 0 | 4956 | 7772 | 136 | 5435 | 8096 | 162 | -479 | -324 | -26 | 0 | 0 | 0 | 0 | 0 | 0 |
-| ESPORTSTMNT06_2753012 | complete | nan | LFL2 | 2023 | Spring | 0 | 2023-01-10 17:07:16 | 1 | 13.01 | 4 | Blue | bot | Axelent | oe:player:8204ca38dc1c42012b5d53131271eb1 | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Ezreal | Sylas | Caitlyn | Wukong | Akali | Yone | nan | nan | nan | nan | nan | 2612 | 1 | 5 | 1 | 7 | 13 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0.2986 | 0.4594 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | nan | nan | nan | nan | nan | nan | nan | 1 | 0 | 42005 | 964.893 | 0.441215 | 398.453 | 234.372 | 17 | 0.3905 | 6 | 0.1378 | 5 | 47 | 1.0796 | 17332 | 11728 | 269.403 | 0.261862 | 15225 | nan | 370 | 345 | 25 | nan | nan | 8.4992 | 3344 | 3377 | 94 | 3015 | 2948 | 75 | 329 | 429 | 19 | 0 | 0 | 0 | 0 | 0 | 0 | 5217 | 5647 | 142 | 5017 | 5355 | 122 | 200 | 292 | 20 | 0 | 0 | 0 | 1 | 0 | 0 |
-| ESPORTSTMNT06_2753012 | complete | nan | LFL2 | 2023 | Spring | 0 | 2023-01-10 17:07:16 | 1 | 13.01 | 5 | Blue | sup | Wixo | oe:player:bb97cd2e43cb0855f6485e6f9e93ea2 | Klanik Esport | oe:team:0ade5e44c23039bca133eee58ec1b83 | Karma | Sylas | Caitlyn | Wukong | Akali | Yone | nan | nan | nan | nan | nan | 2612 | 1 | 0 | 2 | 10 | 13 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0.2986 | 0.4594 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | nan | nan | nan | nan | nan | nan | nan | 0 | 0 | 5668 | 130.199 | 0.0595359 | 360.276 | 284.15 | 52 | 1.1945 | 8 | 0.1838 | 15 | 106 | 2.4349 | 8816 | 3212 | 73.7825 | 0.0717161 | 8125 | nan | 21 | 17 | 4 | nan | nan | 0.4824 | 1953 | 2367 | 1 | 2032 | 2825 | 3 | -79 | -458 | -2 | 0 | 0 | 0 | 0 | 0 | 0 | 2827 | 3218 | 3 | 3043 | 3797 | 3 | -216 | -579 | 0 | 0 | 0 | 1 | 0 | 1 | 0 |
+  <section class="lol-grid lol-grid-two">
+    <article class="lol-panel">
+      <p class="lol-section-label">Research question</p>
+      <h2>We compare win rates when the patch-specific most-banned champion is picked versus when it is not.</h2>
+      <p>
+        The analysis defines the most-banned champion separately for each patch, then compares match outcomes when that champion is picked versus when it is not.
+      </p>
+      <div class="lol-callout">
+        <strong>Key result:</strong>
+        Teams that picked the patch-specific most-banned champion won 54.7% of those games, compared with 49.6% when they did not.
+      </div>
+    </article>
 
-From a viewer's perspective we often find some champions are the top choices in **banning**, which made me curious about if the champion is picked luckily will those champion increase the chance of winning, as it will carry the game compared to other champions. Therefore this analysis will investigate
-> "**If the most banned champion is picked by a team will the team have higher chance to win that game**".
+    <article class="lol-panel lol-panel-tight">
+      <p class="lol-section-label">Fast read</p>
+      <ul class="lol-checklist">
+        <li>Maokai was the most-banned champion overall in the 2023 dataset.</li>
+        <li>The patch-specific most-banned champion changed throughout the season.</li>
+        <li>Early objectives and 15-minute game state were the strongest result signals.</li>
+        <li>The model performed similarly for teams with and without the most-banned champion picked.</li>
+      </ul>
+    </article>
+  </section>
 
-
-While for the convenience and efficiency of the analysis, this Analysis will only use the rows for the `team`, which are 16,484 rows and 130 columns.
-
-**Key finding:** We find that picking the most banned champion is associated with a higher win rate, and that first objectives (first blood, first dragon, etc.) are the strongest predictors of match outcome in our model.
-
-Terminologies and definition from League of legend:
-
-| Term | Definition |
-|:-----------:|:-----------:|
-| Champion | The character can be selected in the game|
-| Soul | Buff granted after defeat dragons |
-| Nerf | Weakening the **performance** from a certain champion from each patch |
-| Buff | Boosting the **performance** from a certain champion from each patch |
-| Ban | Champions can not be used in the game |
-| Pick | Champions **selected** to be played in the game |
-| MBC | The most banned champion |
-
-I will be using columns below pre **defined** from the data set League of Legends 2023 frequently:
-
-| Column Name | Description |
-|:-----------:|:-----------:|
-| gameid | Unique id from each match |
-| league | The tournament name |
-| patch | The game patch or version used in the match |
-| url | The live stream url for the match |
-| result | 1 if team win 0 if loss |
-| position | The player's role in game |
-| kills | Number of opponents a player has defeated |
-| deaths | Number of times a player has been **defeated** |
-| assists | Number of times a player assisted in killing an opponent |
-| pick1 ... pick5 | The champion name that a player plays as |
-| ban1 ... ban5| The champion banned within a match|
-
-Also using columns defined by myself and frequently used through out the analysis:
-
-| Column Name | Description |
-|:-----------:|:-----------:|
-| most_banned_champion_picked | Whether the team picked the most-banned champion (True/False) |
-| average_result | Mean result (win rate) for the group, e.g. by patch |
-| activity_15 | All the information of the team after **started** 15 mins|
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Project map</p>
+        <h2>Follow the analysis path</h2>
+      </div>
+      <p>
+        Move from raw data, to the draft-meta signal, to statistical testing, model interaction, and fairness checks.
+      </p>
+    </div>
+    <div class="lol-next-steps">
+      <a href="{{ '/clean.html' | relative_url }}">
+        <span>Step 1</span>
+        <strong>Build the team-level draft-meta dataset.</strong>
+      </a>
+      <a href="{{ '/hypoth.html' | relative_url }}">
+        <span>Step 2</span>
+        <strong>Test whether the most-banned pick is linked to wins.</strong>
+      </a>
+      <a href="{{ '/interactive.html' | relative_url }}">
+        <span>Step 3</span>
+        <strong>Try a 15-minute match state in the interactive model.</strong>
+      </a>
+      <a href="{{ '/fair.html' | relative_url }}">
+        <span>Step 4</span>
+        <strong>Check model performance across draft-pressure groups.</strong>
+      </a>
+    </div>
+  </section>
+</div>

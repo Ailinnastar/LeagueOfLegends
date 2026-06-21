@@ -1,33 +1,83 @@
 ---
 title: Hypothesis Testing
 layout: default
-description: "Hypothesis Testing"
+description: "Hypothesis testing"
 nav_order: 4
 ---
 
-# Hypothesis Testing
+<link rel="stylesheet" href="{{ '/assets/css/lol-dashboard.css' | relative_url }}">
+<script defer src="{{ '/assets/js/lol-charts.js' | relative_url }}"></script>
 
-As we want to test whether the MBC picked will raise the win rate or not, we will perform **a** permutation test, shuffling `most_banned_champion_picked` and **computing the** difference in mean**s** since it is comparing two groups.
+<div class="lol-dashboard lol-page">
+  <section class="lol-page-hero">
+    <p class="lol-kicker">Hypothesis test</p>
+    <h1>Testing whether the most-banned pick is linked to wins</h1>
+    <p class="lol-lede">
+      The test compares win rate when the patch-specific most-banned champion is picked against win rate when it is not picked.
+    </p>
+  </section>
 
-**Null hypothesis**: If the **most banned** champion is picked the chances of win **will still stay** the same.
+  <section class="lol-metrics" aria-label="Hypothesis testing summary">
+    <article class="lol-metric">
+      <span class="lol-metric-value">54.7%</span>
+      <span class="lol-metric-label">win rate when MBC picked</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">49.6%</span>
+      <span class="lol-metric-label">win rate without MBC pick</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">+5.1 pp</span>
+      <span class="lol-metric-label">observed lift</span>
+    </article>
+    <article class="lol-metric">
+      <span class="lol-metric-value">&lt;0.001</span>
+      <span class="lol-metric-label">permutation p-value</span>
+    </article>
+  </section>
 
-**Alternative hypothesis**: If the **most banned** champion is picked the chances of win will increase.
+  <section class="lol-grid lol-grid-two">
+    <article class="lol-panel">
+      <p class="lol-section-label">Test setup</p>
+      <h2>Permutation test</h2>
+      <div class="lol-data-table">
+        <div class="lol-data-row">
+          <strong>Null hypothesis</strong>
+          <span>Picking the most-banned champion has the same win rate as not picking it.</span>
+        </div>
+        <div class="lol-data-row">
+          <strong>Alternative hypothesis</strong>
+          <span>Teams that pick the most-banned champion have a higher win rate.</span>
+        </div>
+        <div class="lol-data-row">
+          <strong>Test statistic</strong>
+          <span>Difference in mean result between the two groups.</span>
+        </div>
+      </div>
+    </article>
 
-**Test statistics**: Difference in means for wins and losses given the **most banned** champion is picked.
+    <article class="lol-panel lol-panel-tight">
+      <p class="lol-section-label">Result</p>
+      <h2>The observed lift is larger than expected by chance</h2>
+      <p>
+        The shuffled-label distribution is centered near 0 percentage points. The observed lift is 5.1 percentage points.
+      </p>
+      <div class="lol-callout">
+        This is evidence of an association in the 2023 professional match data. It does not prove that the champion pick alone caused the win.
+      </div>
+    </article>
+  </section>
 
-**Method:** **Permutation** test with 10,000 simulations with significance level 0.05 (significance level commonly used).
-
-<div style="text-align: center; margin: 1rem 0;">
-<iframe src="diagram/hypothe-ditribution.html" width=630 height=400 frameBorder=50></iframe>
+  <section class="lol-panel">
+    <div class="lol-section-heading">
+      <div>
+        <p class="lol-section-label">Permutation distribution</p>
+        <h2>Observed lift versus shuffled outcomes</h2>
+      </div>
+      <p>
+        The gold line marks the observed difference in win rate.
+      </p>
+    </div>
+    <div class="lol-chart-card" data-lol-chart="hypothesis"></div>
+  </section>
 </div>
-
-
-
-**Result**
-
-**p-value**: 0.0
-
-We **reject the null hypothesis** that **when** the most banned champion is picked the chances of win **will still stay** the same.
-Therefore, picking the most banned champion does influence the win rate.
-
-**Interpretation:** In our data, when the team picked the most banned champion, win rate was higher than when they did not; the observed difference in win rate between the two groups was statistically significant. This is an **association** in observational data, not proof of causation.
