@@ -1,4 +1,4 @@
-# Jekyll
+# Jekyll (removed — static Python build instead)
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -13,7 +13,7 @@ __pycache__/
 .DS_Store
 .ipynb_checkpoints/
 
-# Analysis files (excluded from GitHub Pages build)
+# Analysis files
 *.csv
 *.ipynb
 dsc80_utils.py
