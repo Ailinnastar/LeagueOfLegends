@@ -110,9 +110,13 @@ body.has-local-nav {
 }
 
 body.has-local-nav main {
-  width: min(1320px, calc(100vw - 24.5rem));
+  box-sizing: border-box;
+  width: min(1320px, calc(100vw - 21.5rem - 2.25rem - 2.25rem - 1.25rem));
+  max-width: 1320px;
   margin-left: 21.5rem;
+  margin-right: 1.25rem;
   padding-left: 2.25rem;
+  padding-right: 2.25rem;
 }
 
 body.has-local-nav table {
@@ -266,8 +270,11 @@ body.has-local-nav code {
 
   body.has-local-nav main {
     width: 100%;
+    max-width: 100%;
     margin-left: 0;
+    margin-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .lol-site-search {

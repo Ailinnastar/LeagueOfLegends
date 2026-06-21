@@ -51,6 +51,7 @@ body:has(.lol-dashboard) .navigation-list-link.active {
   width: 100%;
   max-width: min(1320px, calc(100vw - 2rem));
   padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .lol-dashboard * {
