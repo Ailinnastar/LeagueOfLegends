@@ -101,11 +101,10 @@
 }
 
 body.has-local-nav {
-  --lol-content-right-space: 7.5rem;
-  --lol-content-right-padding: 5rem;
-  --lol-content-left-offset: 21.5rem;
+  --lol-sidebar-gap: 21.5rem;
+  --lol-page-gutter-right: 6rem;
   margin: 0;
-  padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+  padding: 1.25rem var(--lol-page-gutter-right) 1.25rem 1.25rem;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
   background: #080d0c;
@@ -114,18 +113,10 @@ body.has-local-nav {
 
 body.has-local-nav main {
   box-sizing: border-box;
-  width: min(
-    1120px,
-    calc(
-      100vw - var(--lol-content-left-offset) - 2.5rem -
-      var(--lol-content-right-space) - var(--lol-content-right-padding) - 2.5rem
-    )
-  );
+  width: auto;
   max-width: 1120px;
-  margin-left: var(--lol-content-left-offset);
-  margin-right: var(--lol-content-right-space);
-  padding-left: 2.5rem;
-  padding-right: var(--lol-content-right-padding);
+  margin: 0 auto 0 var(--lol-sidebar-gap);
+  padding: 0 2rem 0 2.5rem;
 }
 
 body.has-local-nav main .lol-dashboard {
@@ -161,9 +152,9 @@ body.has-local-nav code {
 .lol-site-search {
   position: fixed;
   top: 1.25rem;
-  right: 1.25rem;
+  right: var(--lol-page-gutter-right, 6rem);
   z-index: 10;
-  width: min(22rem, calc(100vw - 2rem));
+  width: min(22rem, calc(100vw - var(--lol-sidebar-gap, 21.5rem) - 8rem));
 }
 
 .lol-site-search-label {
@@ -255,8 +246,8 @@ body.has-local-nav code {
 
 @media (max-width: 900px) {
   body.has-local-nav {
-    --lol-content-right-space: 0rem;
-    --lol-content-right-padding: 1.25rem;
+    --lol-sidebar-gap: 0rem;
+    --lol-page-gutter-right: 1.25rem;
     padding: 0.75rem 1.25rem;
   }
 
@@ -285,12 +276,9 @@ body.has-local-nav code {
   }
 
   body.has-local-nav main {
-    width: 100%;
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: var(--lol-content-right-padding);
+    margin: 0;
+    padding: 0;
   }
 
   .lol-site-search {
