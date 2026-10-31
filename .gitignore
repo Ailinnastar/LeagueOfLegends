@@ -16,5 +16,6 @@ __pycache__/
 # Analysis files
 *.csv
 *.ipynb
+!analysis/archive/original_analysis.ipynb
 dsc80_utils.py
 pca_starter.py
